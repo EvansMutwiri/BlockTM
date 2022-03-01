@@ -1,12 +1,20 @@
 // import 'package:btm/utils/colors.dart';
 import 'package:btm/responsive/responsive_layout.dart';
 import 'package:btm/responsive/web_layout.dart';
+import 'package:btm/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'responsive/mobile_layout.dart';
 
-void main() {
-  runApp(const MyApp());
+Future main() async {
+  await dotenv.load(fileName: ".environment");
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -16,14 +24,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Block TM',
-      theme: ThemeData.dark().copyWith(
-        // scaffoldBackgroundColor: mobileBackgroundColor
-      ),
-      home: const ResponsiveLayout(
-        webScreen: WebScreenLayout(), mobileScreen: MobileScreenLayout())
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Block TM',
+        theme: ThemeData.dark().copyWith(
+            scaffoldBackgroundColor: mobileBackgroundColor
+            ),
+        home: const ResponsiveLayout(
+            webScreen: WebScreenLayout(), mobileScreen: MobileScreenLayout()));
   }
 }
-
