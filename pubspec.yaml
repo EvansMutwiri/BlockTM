@@ -43,6 +43,7 @@ dependencies:
   web3dart: ^2.3.5
   web_socket_channel: ^2.1.0
   flutter_native_splash: ^2.0.5
+  glass_kit: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -50,7 +51,7 @@ dev_dependencies:
     # flutter_native_splash: ^2.0.1
 
 flutter_native_splash:
-  color: "0000"
+  color: "#111111"
   image: assets/images/blocktm.png
 
   # The "flutter_lints" package below contains a set of recommended lints to

@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.dark().copyWith(
             scaffoldBackgroundColor: mobileBackgroundColor
             ),
-        home: const ResponsiveLayout(
+        home: ResponsiveLayout(
             webScreen: WebScreenLayout(), mobileScreen: MobileScreenLayout()));
   }
 }
